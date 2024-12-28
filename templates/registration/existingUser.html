@@ -1,0 +1,9 @@
+{% extends "baseView.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<h1 class="main_title">{% blocktrans %}UTENTE ESISTENTE{% endblocktrans %}</h1>
+<p>Logged out!</p>
+<a href="{% url 'login'%}">{% blocktrans %}L'account esiste già. Vuoi accedere al sito?{% endblocktrans %}</a>
+{% endblock content %}

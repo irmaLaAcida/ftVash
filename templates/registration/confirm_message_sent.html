@@ -1,0 +1,8 @@
+{% extends "baseView.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="main_title">{% blocktrans %}REGISTRATI{% endblocktrans %}</h1>
+<p>{% blocktrans %}E' stato mandato un messaggio al numero inserito per completare la registrazione{% endblocktrans %}</p>
+<a href="{% url 'bottegaLanterna' %}">{% blocktrans %}Torna alla home{% endblocktrans %}</a>
+{% endblock content %}

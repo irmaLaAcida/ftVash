@@ -1,0 +1,26 @@
+{% extends 'baseView.html' %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="main_title">{% blocktrans %}PRENOTA UN APPUNTAMENTO{% endblocktrans %}</h1>
+{% if user.is_authenticated %}
+    <div class="form_div">
+        <form method="post" action="{% url 'prenotazione' %}">
+            {% csrf_token %}
+            <table>
+                <tr>
+                  <td class="table_data">{{ form }}</td>
+                </tr>
+            </table>
+            <div class="form_btns">
+                <input type="submit" class="submit_btn" value="Prenota">
+                <input type="reset" class="reset_btn" value="Reset">
+            </div>
+            <br><br>
+        </form>
+    </div>
+{% else %}
+<a href="{% url 'login' %}?next={{ request.path }}"><h2>{% blocktrans %}Loggati per prenotare un appuntamento{% endblocktrans %}</h2></a>
+{% endif %}
+
+{% endblock content %} 

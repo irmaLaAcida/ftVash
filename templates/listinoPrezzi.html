@@ -1,0 +1,11 @@
+{% extends 'baseView.html' %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="main_title">{% blocktrans %}LISTINO PREZZI{% endblocktrans %}</h1>
+<ul>
+    {% for service in service_data %}
+        <li><p class="service">{% blocktrans %}{{ service.name }}{% endblocktrans %}   ....................................................    €   {{ service.price }}</p></li>
+    {% endfor %}
+</ul>
+{% endblock content %} 

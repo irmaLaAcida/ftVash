@@ -1,0 +1,9 @@
+{% extends "baseView.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<h1 class="main_title">{% blocktrans %}DISCONNESSIONE{% endblocktrans %}</h1>
+<p>{% blocktrans %}sei stato disconnesso!{% endblocktrans %}</p>
+<a href="{% url 'login'%}">{% blocktrans %}Accedi nuovamente al sito{% endblocktrans %}</a>
+{% endblock content %}

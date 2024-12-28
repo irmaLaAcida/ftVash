@@ -1,0 +1,17 @@
+{% extends "baseView.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<h1 class="main_title">{% blocktrans %}REGISTRATI{% endblocktrans %}</h1>
+<div class="form_div">
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<br>
+		<button type="submit" class="submit_btn">{% blocktrans %}Registrati{% endblocktrans %}</button>
+		<button type="reset" class="reset_btn">{% blocktrans %}Reset{% endblocktrans %}</button>
+    </form>
+</div>
+<p> {% blocktrans %}{{ custom_mess }}{% endblocktrans %}</p>
+{% endblock content %}

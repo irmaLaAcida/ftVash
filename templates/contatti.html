@@ -1,0 +1,36 @@
+{% extends 'baseView.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<h1 class="main_title">CONTATTI</h1>
+<div id="contact" class="contact">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="row">
+               <div class="col-md-12 ">
+                  <ul>
+                   <li><img src="{% static 'images/phone.png' %}" type="image/gif"><a>+393534674705</a></li> <!--telefono-->
+                   <br><br>
+                   <li><img src="{% static 'images/email.png' %}" type="image/gif"><a href="mailto:bot.bottegaLanterna@gmail.com">bot.bottegaLanterna@gmail.com</a></li> <!--email-->
+                   <br><br>
+                   <li><img src="{% static 'images/whatsapp.png' %}" type="image/gif"><a href="https://wa.me/393534674705">+393534674705</a></li> <!--whatsapp-->
+                   <br><br>
+                   <li><img src="{% static 'images/telegram.png' %}" type="image/gif"><a href="https://t.me/Bottega_Lanterna">Bottega Lanterna Barbershop</a></li> <!--telegram-->
+                   <br><br>
+                   <li><img src="{% static 'images/instagram.png' %}" type="image/gif"><a href="https://www.instagram.com/bottega_lanterna/?igsh=Znd5em1mM3NzMmt2">Bottega Lanterna</a></li> <!--instagram-->
+                   <br><br>
+                   <li><img src="{% static 'images/pin.png' %}" type="image/gif" class="pin_img"><a>via Longhena 22/a, 31020 San Vendemiano (TV)</a></li> <!--indirizzo-->
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6 padding_right2">
+            <iframe id="map-canvas" class="map_part" width="100%"  height="100%"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=via longhena 22a san vendemiano&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            </iframe>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock content%} 

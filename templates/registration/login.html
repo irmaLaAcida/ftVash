@@ -1,0 +1,38 @@
+{% extends "baseView.html" %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="main_title">{% blocktrans %}ACCEDI{% endblocktrans %}</h1>
+{% if form.errors %}
+  <p>{% blocktrans %}Il nome o la password non sono corretti. Per piacere, riprova{% endblocktrans %}</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>{% blocktrans %}Il tuo account non ha accesso a questa sezione. Per piacere, usane uno autorizzato{% endblocktrans %}</p>
+  {% else %}
+    <p>{% blocktrans %}Accedi per visualizzare questa pagina{% endblocktrans %}</p>
+  {% endif %}
+{% endif %}
+
+<div class="form_div">
+    <form method="post" action="{% url 'login' %}">
+      <p>{% blocktrans %}Il tuo nome utente è il tuo indirizzo e-mail{% endblocktrans %}</p>
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td class="table_data">{{ form }}</td>
+        </tr>
+      </table>
+      <div class="form_btns">
+        <input type="submit" class="submit_btn" value="Login">
+        <input type="reset" class="reset_btn" value="Reset">
+      </div>
+      <br><br>
+      {# Assumes you set up the password_reset view in your URLconf #}
+      <p class="reset_pw_btn"><a href="{% url 'password_reset' %}">{% blocktrans %}Hai dimenticato la password?{% endblocktrans %}</a></p>
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+  </div>
+</div>
+{% endblock content %}

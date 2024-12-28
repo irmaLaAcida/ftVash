@@ -1,0 +1,140 @@
+{% extends 'baseView.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+<h1 class="main_title">BOTTEGA LANTERNA</h1>
+<div id="we_Do" class="we_do">
+   <div class="row m-auto p-auto justify-content-between align-items-center home_infos">
+      <div class="col-md-4 col-sm-12 m-0 p-auto justify-content-between align-items-center text-center">
+         <div>
+            <div>
+               <h2 class="text-center">Via Longhena 22/a</h2>
+               <h2 class="text-center">San Vendemiano (TV)</h2>
+            </div>
+         </div>
+      </div>
+      <div class="col-md-4 col-sm-12 m-0 p-auto justify-content-between align-items-center text-center">
+         <div>
+            <h2 class="text-center"><img src="{% static 'images/phone.png' %}" type="image/gif" />+393534674705</h2>
+         </div>
+      </div>
+      <div class="col-md-4 col-sm-12 m-0 p-auto justify-content-between align-items-center text-center">
+         <h2>
+            <ul>
+               <li>{% blocktrans %}Lunedì{% endblocktrans %}    9.00 - 16.00</li>
+               <li>{% blocktrans %}Martedì{% endblocktrans %}    12.00 - 21.00</li>
+               <li>{% blocktrans %}Mercoledì{% endblocktrans %}     12.00 - 21.00</li>
+               <li>{% blocktrans %}Giovedì{% endblocktrans %}    9.00 - 18.00</li>
+               <li>{% blocktrans %}Venerdì{% endblocktrans %}    9.00 - 18.00</li>
+               <li>{% blocktrans %}Sabato{% endblocktrans %}     9.00 - 13.00</li>
+            </ul>
+         </h2>
+      </div>
+   </div>
+   <div class="container mt-5 mb-5">
+
+      {% comment %} presentation section {% endcomment %}
+      <div class="row">
+         <div class="col-md-12">
+            <div class="titlepage">
+               <h2>{% blocktrans %}Qui ci mettiamo un contenuto{% endblocktrans %}</h2>
+               <img class="img-responsive" src="{% static 'images/8.png' %}" type="image/gif" alt="LOADING_IMG">
+               <p>{% blocktrans %}Cosa possiamo scriverci di bello{% endblocktrans %}?</p>
+            </div>
+         </div>
+      </div>
+      <hr>
+
+      {% comment %} photo section {% endcomment %}
+      {% comment %} <div class="row">
+         <div class="col-md-6 col-sm-11">
+            <div>
+               <img class="img-responsive" src="{% static 'images/7.png' %}" type="image/gif" alt="LOADING_IMG">
+            </div>
+         </div>
+         <div class="col-1"></div>
+         <div class="col-md-5 col-sm-12">
+               <h3>{% blocktrans %}Descrizione foto{% endblocktrans %}</h3>
+               <p>{% blocktrans %}Cosa possiamo scriverci di bello?{% endblocktrans %}</p> 
+         </div>
+      </div>
+      <hr>
+
+      <div class="row">
+         <div class="col-md-6 col-sm-11">
+            <div>
+               <img class="img-responsive" src="{% static 'images/6.png' %}" type="image/gif" alt="LOADING_IMG">
+            </div>
+         </div>
+         <div class="col-1"></div>
+         <div class="col-md-5 col-sm-12">
+               <h3>{% blocktrans %}Il nostro negozio è sicuro{% endblocktrans %}</h3>
+               <p>{% blocktrans %}Area  videosorvegliata{% endblocktrans %}</p>
+         </div>
+      </div>
+      <hr>
+
+      <div class="row">
+         <div class="col-md-6 col-sm-11">
+            <div>
+               <img class="img-responsive" src="{% static 'images/5.png' %}" type="image/gif" alt="LOADING_IMG">
+            </div>
+         </div>
+         <div class="col-1"></div>
+         <div class="col-md-5 col-sm-12">
+               <h3>{% blocktrans %}Descrizione foto{% endblocktrans %}</h3>
+               <p>{% blocktrans %}Cosa possiamo scriverci di bello?{% endblocktrans %}</p> 
+         </div>
+      </div>
+      <hr> {% endcomment %}
+
+      {% comment %} video section {% endcomment %}
+      <div class="row">
+         <div class="col-md-6 col-sm-11">
+            <video controls class="w-100">
+               <source src="{% static 'video/home_video.mp4' %}" type="video/mp4">
+               {% blocktrans %}Il tuo browser non supporta il tag video.{% endblocktrans %}
+            </video>
+         </div>
+         <div class="col-1"></div>
+         <div class="col-md-5 col-sm-12">
+               <h3>{% blocktrans %}Descrizione video{% endblocktrans %}</h3>
+               <p>{% blocktrans %}Cosa possiamo scriverci di bello?{% endblocktrans %}</p>
+            </div>
+         </div>
+      </div>
+      <hr>
+
+      {% comment %} reservation section {% endcomment %}
+      <div class="row">
+         <div class="col-1"></div>
+         <div class="col-10 home_infos">
+            <h1>{% blocktrans %}Prenota un appuntamento{% endblocktrans %}</h1>
+
+            {% if user.is_authenticated %}
+               <div class="form_div">
+                   <form method="post" action="{% url 'bottegaLanterna' %}">
+                       {% csrf_token %}
+                       <table>
+                           <tr>
+                             <td class="table_data">{{ form }}</td>
+                           </tr>
+                       </table>
+                       <div class="form_btns">
+                           <input type="submit" class="submit_btn" value="Prenota">
+                           <input type="reset" class="reset_btn" value="Reset">
+                       </div>
+                       <br><br>
+                   </form>
+               </div>
+            {% else %}
+               <a href="{% url 'login' %}?next={{ request.path }}"><h2 class="yellow">{% blocktrans %}Accedi per prenotare un appuntamento{% endblocktrans %}</h2></a>
+            {% endif %}
+         </div>
+         <div class="col-1"></div>
+      </div>
+
+   </div>
+</div>
+{% endblock content %}
