@@ -1,0 +1,238 @@
+/*--------------------------------------------------------------------- File Name: responsive.css ---------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-bg h1 {
+        font-size: 76px;
+        line-height: 72px;
+        letter-spacing: 60px;
+    }
+
+    .we_do .we_box h3 {
+        font-size: 19px;
+        line-height: 25px;
+    }
+
+    .main_form {
+        margin-top: 39px;
+    }
+
+    ul.location_icon li a {
+        padding-right: 13px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #banner1 {
+        height: 900px;
+        overflow: hidden;
+    }
+
+    .navigation.navbar-dark .navbar-nav .nav-link {
+        padding: 0px 9px;
+    }
+
+    .text-bg h1 {
+        font-size: 58px;
+        letter-spacing: 43px;
+        line-height: 44px;
+    }
+
+    .text-bg span {
+        font-size: 46px;
+        letter-spacing: 56px;
+    }
+
+    ul.social_team li a {
+        margin: 0 9px;
+    }
+
+    .main_form {
+        margin-top: 47px;
+    }
+
+    .footer h3 {
+        font-size: 35px;
+    }
+
+    ul.location_icon li {
+        padding: 9px 0px;
+        font-size: 15px;
+    }
+
+    ul.social_icon li a {
+        width: 41px;
+        font-size: 22px;
+        height: 41px;
+    }
+
+    .footer {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+
+    .footer p {
+        padding-right: 21px;
+        font-size: 15px;
+    }
+
+    .we_do .we_box h3 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .we_do .we_box p {
+        font-size: 13px;
+        line-height: 26px;
+    }
+
+    .black {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+    .logo {
+        border: none;
+    }
+
+    .text-bg h1 {
+        font-size: 48px;
+        letter-spacing: 35px;
+        line-height: 51px;
+    }
+
+    .text-bg span {
+        font-size: 41px;
+        letter-spacing: 46px;
+    }
+
+    .titlepage h2 {
+        font-size: 31px;
+    }
+
+    .social_box {
+        margin-top: -67px !important;
+        max-width: 308px;
+        margin: 0 auto;
+    }
+
+    .footer {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+
+    .footer h3 {
+        padding-top: 20px;
+    }
+
+    .padding_right2 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .map_section {
+        margin-top: 30px;
+    }
+
+    .black {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .header {
+        padding: 30px 0px 15px 0px;
+    }
+
+    .logo {
+        margin-top: 0px !important;
+    }
+
+    .logo_img {}
+
+    #banner1 {
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .form_btns {
+        padding: 0% 5%;
+    }
+
+    .submit_btn,
+    .reset_btn {
+        flex: 1;
+        width: 90%;
+    }
+
+    .banner_main {
+        padding: 275px 0px 0px 0px;
+        min-height: 750px;
+    }
+
+    .text-bg h1 {
+        font-size: 36px;
+        letter-spacing: 12px;
+        padding-bottom: 20px;
+        line-height: 32px;
+    }
+
+    .text-bg span {
+        font-size: 29px;
+        letter-spacing: 26px;
+        line-height: 30px;
+    }
+
+    .titlepage h2 {
+        font-size: 28px;
+    }
+
+    .we_do .we_box p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .social_box {
+        margin-top: -67px !important;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .footer h3 {
+        padding-top: 20px;
+    }
+
+    .footer {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+
+    .padding_right2 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .map_section {
+        margin-top: 30px;
+    }
+
+    ul.location_icon li {
+        font-size: 16px;
+    }
+
+    .d_none {
+        display: none;
+    }
+
+    .right_bottun {
+        margin-top: -105px;
+    }
+
+    .black {
+        padding: 10px;
+    }
+}
